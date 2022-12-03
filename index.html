@@ -10,66 +10,67 @@
 
 <body class="page">
   <header class="header">
-    <img src="./images/Logo/Logo.png" alt="Логотип проекта:Место" class="logo">
-    <div class="header__underline"></div>
+    <img src="./images/Logo/Vector.svg" alt="Логотип проекта:Место" class="logo">
   </header>
 
-  <section class="profile">
-    <img src="./images/avatar-profile.jpg" alt="Аватар профиля" class="profile__avatar">
-    <div class="profile__info">
-      <h2 class="profile__name">Жак-Ив Кусто</h2>
-      <button class="profile__edit" type="button"></button>
-      <p class="profile__description">Исследователь океана</p>
-    </div>
-    <button class="profile__add-content" type="button"></button>
-  </section>
+  <main class="content">
+    <section class="profile">
+      <img src="./images/avatar-profile.jpg" alt="Аватар профиля" class="profile__avatar">
+      <div class="profile__info">
+        <h1 class="profile__name">Жак-Ив Кусто</h1>
+        <button class="profile__edit" type="button"></button>
+        <p class="profile__description">Исследователь океана</p>
+      </div>
+      <button class="profile__add-content" type="button"></button>
+    </section>
 
-  <section class="cards">
-    <ul class="cards__item">
-      <li class="card">
-        <img src="./images/monument-yonaguni.jpg" alt="Монумент Йонагуни" class="card__image">
-        <div class="card__info">
-          <h3 class="card__title">Монумент Йонагуни</h3>
-          <img src="./images/heart.svg" alt="Сердечко" class="card__like">
-        </div>
-      </li>
-      <li class="card">
-        <img src="./images/ocean-down.jpg" alt="Дно Океана" class="card__image">
-        <div class="card__info">
-          <h3 class="card__title">Дно Океана</h3>
-          <img src="./images/heart.svg" alt="Сердечко" class="card__like">
-        </div>
-      </li>
-      <li class="card">
-        <img src="./images/Sea-deep.jpg" alt="Морское Дно" class="card__image">
-        <div class="card__info">
-          <h3 class="card__title">Морские глубины</h3>
-          <img src="./images/heart.svg" alt="Сердечко" class="card__like">
-        </div>
-      </li>
-      <li class="card">
-        <img src="./images/underwater-riff.jpg" alt="Подводынй риф" class="card__image">
-        <div class="card__info">
-          <h3 class="card__title">Подводный риф</h3>
-          <img src="./images/heart.svg" alt="Сердечко" class="card__like">
-        </div>
-      </li>
-      <li class="card">
-        <img src="./images/underwater-statue.jpg" alt="Статуя под водой" class="card__image">
-        <div class="card__info">
-          <h3 class="card__title">Статуя под водой</h3>
-          <img src="./images/heart.svg" alt="Сердечко" class="card__like">
-        </div>
-      </li>
-      <li class="card">
-        <img src="./images/Ushelye-silfra.jpg" alt="Ущелье Сильфра" class="card__image">
-        <div class="card__info">
-          <h3 class="card__title">Ущелье Сильфра</h3>
-          <img src="./images/heart.svg" alt="Сердечко" class="card__like">
-        </div>
-      </li>
-    </ul>
-  </section>
+    <section class="cards">
+      <ul class="cards__item">
+        <li class="card">
+          <img src="./images/monument-yonaguni.jpg" alt="Монумент Йонагуни" class="card__image">
+          <div class="card__info">
+            <h2 class="card__title">Монумент Йонагуни</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/ocean-down.jpg" alt="Дно Океана" class="card__image">
+          <div class="card__info">
+            <h2 class="card__title">Дно Океана</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/Sea-deep.jpg" alt="Морское Дно" class="card__image">
+          <div class="card__info">
+            <h2 class="card__title">Морские глубины</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/underwater-riff.jpg" alt="Подводынй риф" class="card__image">
+          <div class="card__info">
+            <h2 class="card__title">Подводный риф</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/underwater-statue.jpg" alt="Статуя под водой" class="card__image">
+          <div class="card__info">
+            <h2 class="card__title">Статуя под водой</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+        <li class="card">
+          <img src="./images/Ushelye-silfra.jpg" alt="Ущелье Сильфра" class="card__image">
+          <div class="card__info">
+            <h2 class="card__title">Ущелье Сильфра</h2>
+            <button class="card__like" type="button"></button>
+          </div>
+        </li>
+      </ul>
+    </section>
+  </main>
 
   <footer class="footer">
     <p class="footer__copyright">© 2022 Mesto Russia</p>
@@ -78,12 +79,10 @@
   <div class="popup">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form">
-        <input type="text" class="popup__name">
-        <input type="text" class="popup__description">
-        <button type="submit" class="popup__submit">
-          Сохранить
-        </button>
+      <form name="formPopup" class="popup__form">
+        <input type="text" class="popup__input popup__input_type_name" name="name">
+        <input type="text" class="popup__input popup__input_type_description" name="description">
+        <button type="submit" class="popup__submit">Сохранить</button>
       </form>
       <button class="popup__close"></button>
     </div>

@@ -14,5 +14,6 @@
         font-size: 0.875rem;
         line-height: 1.062rem;
         text-align: center;
+        max-width: 184px;
     }
 }
