@@ -6,6 +6,7 @@
     height: 19px;
     align-self: center;
     border: none;
+    background-color: #FFFFFF;
 }
 
 .card__like:hover {
