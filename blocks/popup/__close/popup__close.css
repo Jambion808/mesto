@@ -6,7 +6,7 @@
   border: none;
   width: 32px;
   height: 32px;
-  background-color: #000;
+  background-color: rgba(0, 0, 0, 0);
   top: -40px;
   right: -40px;
   background-position: center;
@@ -21,8 +21,7 @@
   .popup__close {
     width: 20px;
     height: 20px;
-    top: -30px;
-    right: 0px;
-    
+    top: -25px;
+    right: 0px; 
   }
 }

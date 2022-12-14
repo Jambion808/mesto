@@ -8,7 +8,7 @@ let popupName = document.querySelector('.popup__input_type_name');
 let popupDescriprion = document.querySelector('.popup__input_type_description');
 let popupClose = document.querySelector('.popup__close');
 let popupForm = document.querySelector('.popup__form');
-let popupProfile = document.querySelector('.popup__profile');
+let popupProfile = document.querySelector('.popup_profile');
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
@@ -38,8 +38,8 @@ popupForm.addEventListener('submit', saveSubmit);
 
 // Попап добавления карточки
 
-const popupCard = document.querySelector ('.popup__card');
-const popupCardClose = document.querySelector('.popup-card__close');
+const popupCard = document.querySelector ('.popup_card');
+const popupCardClose = document.querySelector('.popup__close-card');
 const addCardButton = document.querySelector('.profile__add-content');
 
 addCardButton.addEventListener('click', function(){
@@ -50,8 +50,8 @@ popupCardClose.addEventListener('click', function() {
   closePopup(popupCard);
 })
 
-const inputCardPlace = document.querySelector('.popup-card__input_type_place');
-const inputCardLink = document.querySelector('.popup-card__input_type_url');
+const inputCardPlace = document.querySelector('.popup__input_type_place');
+const inputCardLink = document.querySelector('.popup__input_type_url');
 
 
 function saveCardSubmit(event){
@@ -96,9 +96,9 @@ const initialCards = [
 //Создание карточки, лайков и удаления
 
 const cardContainer = document.querySelector('.element');
-const addCardForm = document.querySelector('.popup-card__form');
+const addCardForm = document.querySelector('.popup__card-form');
 const templateCard = document.querySelector('#template-cards');
-const popupImage = document.querySelector('.popup__image')
+const popupImage = document.querySelector('.popup_image')
 const popupImageButton= document.querySelector('.popup__image-photo');
 const popupImageClose = document.querySelector('.popup__image-close');
 const popupImageDescr = document.querySelector('.popup__image-description');
