@@ -12,6 +12,8 @@ const popupProfileForm = document.querySelector('.popup__profile-form')
 
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
+  document.addEventListener('mousedown', closePopupOutsideClick);
 }
 
 profileEditButton.addEventListener('click', function () {
@@ -22,10 +24,28 @@ profileEditButton.addEventListener('click', function () {
 
 function closePopup(popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closePopupEsc);
+  document.removeEventListener('mousedown', closePopupOutsideClick);
 }
+
 buttonCloseEditProfilePopup.addEventListener('click', function () {
   closePopup(popupEditProfile);
-})
+});
+
+function closePopupEsc(evt) {
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened')
+    closePopup(openedPopup);
+  }
+}
+
+function closePopupOutsideClick(evt) {
+  const eventTarget = evt.target;
+  if (eventTarget.classList.contains('popup_opened')) {
+    closePopup(eventTarget);
+  }
+}
+
 
 function submitEditProfileForm(event) {
   event.preventDefault();
