@@ -61,11 +61,14 @@ popupProfileForm.addEventListener('submit', submitEditProfileForm);
 const popupCard = document.querySelector('.popup_card');
 const popupCardClose = document.querySelector('.popup__close-card');
 const cardAddButton = document.querySelector('.profile__add-content');
+const cardSubmitButton = document.querySelector('.popup__submit_type_card')
 
 cardAddButton.addEventListener('click', function () {
   cardInputPlace.value = '';
   cardInputLink.value = '';
   openPopup(popupCard);
+  cardSubmitButton.classList.add('popup__submit_disabled');
+  cardSubmitButton.setAttribute('disabled', 'disabled')
 });
 
 popupCardClose.addEventListener('click', function () {
