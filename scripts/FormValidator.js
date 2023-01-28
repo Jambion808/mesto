@@ -63,6 +63,15 @@ export class FormValidator {
     return this._inputList.some((inputElement) => !inputElement.validity.valid);
   }
 
+  resetValidation() {
+    this._toggleButtonState(); 
+
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement) 
+    });
+
+  }
+
   //Блокирум сабмит
   _toggleButtonState() {
     if (this._hasInvalidInput()) {
