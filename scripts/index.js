@@ -26,30 +26,6 @@ const popupImageDescription = document.querySelector(
 );
 
 // //Создание карточек
-// const mapNewCard = initialCards.map(function(item) {
-//   return {
-//     name: item.name,
-//     link: item.link
-//   };
-// });
-
-// const addCard = (newCard) => {
-//   cardContainer.prepend(newCard)
-// };
-
-// function createCard(item) {
-//   const card = new Card(item, '#template-cards', openImagePopup);
-//   const newCard = card.generateCard();
-
-//   addCard(newCard);
-// }
-
-// mapNewCard.forEach((item) => {
-//   createCard(item);
-// })
-
-
-// //Создание карточек
 function getCard(item) {
   const card = new Card(item, "#template-cards", openImagePopup);
   const cardElement = card.generateCard();
@@ -134,8 +110,6 @@ function openImagePopup(name, link) {
 cardAddButton.addEventListener("click", function () {
   popupCardForm.reset();
   openPopup(popupCard);
-  cardSubmitButton.classList.add("popup__submit_disabled");
-  cardSubmitButton.setAttribute("disabled", "disabled");
   cardValidation.resetValidation();
 });
 
