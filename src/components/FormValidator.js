@@ -1,4 +1,4 @@
-export class FormValidator {
+export default class FormValidator {
   constructor(enableValidation, form) {
     this._config = enableValidation;
     this._formElement = form;
@@ -14,22 +14,23 @@ export class FormValidator {
   _showInputError(inputElement) {
     const errorElement = this._formElement.querySelector(
       `.${inputElement.id}-error`
-    );
+);
+    inputElement.classList.add(this._config.inputErrorClass);
 
     errorElement.classList.add(this._config.errorClass);
     errorElement.textContent = inputElement.validationMessage;
-    inputElement.classList.add(this._config.inputErrorClass);
+   
   }
 
   //Скрываем ошибку 
   _hideInputError(inputElement) {
     const errorElement = this._formElement.querySelector(
-      `.${inputElement.id}-error`
-    );
+      `.${inputElement.id}-error`);
 
-    errorElement.classList.remove(this._config.errorClass);
-    errorElement.textContent = "";
     inputElement.classList.remove(this._config.inputErrorClass);
+    errorElement.textContent = '';
+    errorElement.classList.remove(this._config.errorClass);
+    
   }
 
   //Проверяем валидацию
@@ -43,12 +44,12 @@ export class FormValidator {
 
   //Ставим слушатель на методы
   _setEventListener() {
-    this._toggleButtonState();
+    this.toggleButtonState();
 
     this._inputList.forEach((inputElement) => {
       inputElement.addEventListener("input", () => {
         this._checkInputValidity(inputElement);
-        this._toggleButtonState();
+        this.toggleButtonState();
       });
     });
   }
@@ -64,7 +65,7 @@ export class FormValidator {
   }
 
   resetValidation() {
-    this._toggleButtonState(); 
+    this.toggleButtonState(); 
 
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement) 
@@ -73,7 +74,7 @@ export class FormValidator {
   }
 
   //Блокирум сабмит
-  _toggleButtonState() {
+  toggleButtonState() {
     if (this._hasInvalidInput()) {
       this._buttonElement.classList.add(this._config.inactiveButtonClass);
       this._buttonElement.disabled = true;

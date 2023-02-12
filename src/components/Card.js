@@ -1,7 +1,7 @@
-export class Card {
-  constructor(data, templateSelector, openImagePopup) {
-    this._link = data.link;
-    this._name = data.name;
+export default class Card {
+  constructor(element, templateSelector, openImagePopup) {
+    this._link = element.link;
+    this._name = element.name;
     this._templateSelector = templateSelector;
     this._openImagePopup = openImagePopup;
   }
@@ -31,7 +31,7 @@ export class Card {
   }
 
   //Ставим слушатель на методы
-  _setEventListener() {
+  _setEventListeners() {
 
     this._cardImage.addEventListener("click", () => {
         this._openImageButton();
@@ -49,15 +49,17 @@ export class Card {
   //Карточка готова к публикации
   generateCard() {
     this._element = this._getTemplate();
-   
     this._element.querySelector(".card__title").textContent = this._name;
+    
     this._likeButton = this._element.querySelector(".card__like");
     this._deleteCardButton = this._element.querySelector(".card__delete");
     this._cardImage = this._element.querySelector(".card__image");
-    this._cardImage.src = this._link;
+    
+    
     this._cardImage.alt = this._name;
+    this._cardImage.src = this._link;
 
-    this._setEventListener();
+    this._setEventListeners();
 
     return this._element;
   }
