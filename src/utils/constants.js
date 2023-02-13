@@ -32,7 +32,7 @@ const popupInputDescriprion = document.querySelector(
 );
 const cardAddButton = document.querySelector(".profile__add-content");
 const cardContainer = document.querySelector(".element");
-
+ 
 const enableValidation = {
   formSelector: ".popup__form",
   inputSelector: ".popup__input",

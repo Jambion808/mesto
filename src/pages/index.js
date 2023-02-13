@@ -8,7 +8,7 @@ import PopupWithForm from "../components/PopupWithForm.js";
 import UserInfo from "../components/UserInfo.js";
 
 // Профиль
-
+  
 const userInfo = new UserInfo ({
   nameProfile: '.profile__name',
   infoProfile: '.profile__description'
