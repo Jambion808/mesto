@@ -30,8 +30,17 @@ const popupInputName = document.querySelector(".popup__input_type_name");
 const popupInputDescriprion = document.querySelector(
   ".popup__input_type_description"
 );
+const popupProfileEdit = document.querySelector('.popup_profile');
 const cardAddButton = document.querySelector(".profile__add-content");
 const cardContainer = document.querySelector(".element");
+const profileName = document.querySelector(".profile__name");
+const profileDescription = document.querySelector(".profile__description");
+const profileAvatar = document.querySelector(".profile__avatar");
+const popupEditProfile = document.querySelector(".popup_profile");
+const profileForm = document.querySelector(".popup__profile-form");
+// const popupClose = document.querySelector(".popup__close");
+const popupImage = document.querySelector(".popup_image");
+const popupCard = document.querySelector('.popup_card')
  
 const enableValidation = {
   formSelector: ".popup__form",
@@ -42,4 +51,4 @@ const enableValidation = {
   errorClass: "popup__input-error_visible",
 };
 
-  export {initialCards, profileEditButton, popupInputName, popupInputDescriprion, cardAddButton, cardContainer, enableValidation};
+  export {initialCards, popupCard, popupImage, popupProfileEdit, profileAvatar,popupEditProfile, profileName, profileDescription, profileEditButton, profileForm, popupInputName, popupInputDescriprion, cardAddButton, cardContainer, enableValidation};

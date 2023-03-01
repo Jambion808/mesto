@@ -62,14 +62,7 @@ export default class FormValidator {
     return this._inputList.some((inputElement) => !inputElement.validity.valid);
   }
 
-  resetValidation() {
-    this.toggleButtonState(); 
 
-    this._inputList.forEach((inputElement) => {
-      this._hideInputError(inputElement) 
-    });
-
-  }
 
   //Блокирум сабмит
   toggleButtonState() {
@@ -80,5 +73,13 @@ export default class FormValidator {
       this._buttonElement.classList.remove(this._config.inactiveButtonClass);
       this._buttonElement.disabled = false;
     }
+  }
+
+  resetValidation() {
+    this._inputList.forEach((inputElement) => {
+      this._hideInputError(inputElement) 
+    });
+    this.toggleButtonState(); 
+
   }
 }

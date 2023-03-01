@@ -2,8 +2,11 @@ export default class Card {
   constructor(element, templateSelector, openImagePopup) {
     this._link = element.link;
     this._name = element.name;
+    // this._isLike = false;
+    // this._likes = element.likes;
     this._templateSelector = templateSelector;
     this._openImagePopup = openImagePopup;
+    // this._handleLikeCard = handleLikeCard;
   }
 
   _getTemplate() {
@@ -30,6 +33,10 @@ export default class Card {
     this._element.remove();
   }
 
+  // showLikeCount(){
+
+  // }
+
   //Ставим слушатель на методы
   _setEventListeners() {
 
@@ -54,6 +61,7 @@ export default class Card {
     this._likeButton = this._element.querySelector(".card__like");
     this._deleteCardButton = this._element.querySelector(".card__delete");
     this._cardImage = this._element.querySelector(".card__image");
+    // this._likeCount = this._element.querySelector(".card__like-number")
     
     
     this._cardImage.alt = this._name;
@@ -62,5 +70,7 @@ export default class Card {
     this._setEventListeners();
 
     return this._element;
+    
   }
+  
 }

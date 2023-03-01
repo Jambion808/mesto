@@ -4,9 +4,9 @@
     background-repeat: no-repeat;
     width: 22px;
     height: 19px;
-    align-self: center;
     border: none;
     background-color: #FFFFFF;
+    margin-top: -3px;
 }
 
 .card__like:hover {
