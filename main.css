@@ -15,7 +15,7 @@
 .card__image{border-radius:10px 10px 0 0;height:282px;-o-object-fit:cover;object-fit:cover;width:282px}.card__image:hover{cursor:pointer;opacity:.9}
 .card__info{display:flex;justify-content:space-between;margin-left:21px;margin-top:25px;max-width:246px}
 .card__title{color:#000;font-size:1.5rem;font-weight:900;line-height:1.815rem;margin:0;max-width:215px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.card__like{align-self:center;background-color:#fff;background-image:url(87ed371465c7a6a1cd01.svg);background-repeat:no-repeat;background-size:contain;border:none;height:19px;width:22px}.card__like:hover{cursor:pointer;opacity:.5}
+.card__like{background-color:#fff;background-image:url(87ed371465c7a6a1cd01.svg);background-repeat:no-repeat;background-size:contain;border:none;height:19px;margin-top:-3px;width:22px}.card__like:hover{cursor:pointer;opacity:.5}
 .card__like_active{background-image:url(e787eeb70bb65b7b453a.svg);background-repeat:no-repeat;background-size:contain}
 .card__delete{align-self:center;background-color:transparent;background-image:url(823b0cf1b0b7e9cb7cad.svg);background-repeat:no-repeat;background-size:contain;border:none;height:19px;position:absolute;right:20px;top:20px;width:18px}.card__delete:hover{cursor:pointer;opacity:.6}
 .footer{align-items:center;margin:0 auto 60px;max-width:880px}@media screen and (max-width:800px){.footer{margin-bottom:36px;margin-left:19px}}
@@ -39,9 +39,13 @@
 .popup__input-error{display:block;margin-top:5px;min-height:32px}.popup__input-error .avatar-input-error{max-height:0}
 .popup__input-error_visible{color:red;font-size:.75rem;font-weight:400;line-height:.937rem}
 .popup_image{background-color:rgba(0,0,0,.9)}
-.profile__avatar-conteiner{border-radius:50%;display:flex;height:120px;justify-content:center;margin:0 30px 0 0;width:120px}.profile__avatar-conteiner:hover .profile__avatar-button:before{display:flex}
+.profile__avatar-container{border-radius:50%;display:flex;height:120px;justify-content:center;margin:0 30px 0 0;width:120px}.profile__avatar-container:hover .profile__avatar-button:before{display:flex}
 .profile__avatar-button{background-color:transparent;border:none;cursor:pointer;outline:none;padding:0;position:relative}.profile__avatar-button:before{align-items:center;background-color:rgba(0,0,0,.8);bottom:0;content:url(93c771f5f8582261951d.png);display:none;justify-content:center;left:0;position:absolute;right:0;top:0}
 .popup__delete-container{align-content:center;background-color:#fff;border-radius:10px;box-shadow:0 0 25px rgba(0,0,0,.15);display:flex;flex-direction:column;justify-items:center;max-width:430px;opacity:1;position:relative;visibility:visible}@media screen and (max-width:650px){.popup__delete-container{max-width:282px}}
 .popup__delete-title{color:#000;font-size:1.5rem;font-weight:900;line-height:1.812rem;margin:34px 36px 38px;max-width:330px;min-height:23px;white-space:nowrap}@media screen and (max-width:650px){.popup__delete-title{font-size:1.125rem;line-height:1.375rem;margin:25px 22px 75px;max-width:238px}}
 .popup__submit_delete{background-color:#000;border:none;border-radius:2px;color:#fff;font-size:1.125rem;font-weight:400;height:50px;line-height:1.375rem;margin:0 0 37px;width:358px}.popup__submit_delete:hover{cursor:pointer;opacity:.8}@media screen and (max-width:900px){.popup__submit_delete{font-size:.875rem;height:46px;line-height:1.062rem;margin:45px 0 25px;max-width:238px}}
+.card__like-container{align-self:center;display:flex;flex-direction:column;gap:3px}
+.card__like-number{font-size:13px;font-weight:400;line-height:1.2;margin:0}
 
+
+/*# sourceMappingURL=main.css.map*/
