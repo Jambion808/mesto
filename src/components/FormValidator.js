@@ -26,9 +26,9 @@ export default class FormValidator {
     const errorElement = this._formElement.querySelector(
       `.${inputElement.id}-error`);
     inputElement.classList.remove(this._config.inputErrorClass);
-    errorElement.textContent = '';
-    errorElement.classList.remove(this._config.errorClass);
     
+    errorElement.classList.remove(this._config.errorClass);
+    errorElement.textContent = "";
   }
 
   //Проверяем валидацию

@@ -38,7 +38,7 @@ export class Api {
     }).then(processResponse);
   }
 
-  setLikes(is) {
+  setLikes(id) {
     return fetch(
       "https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes",
       {
@@ -47,6 +47,18 @@ export class Api {
       }
     ).then(processResponse);
   }
+
+  deleteLike(id){
+    return fetch(
+      "https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes",
+      {
+        method: "DELETE",
+        headers: this._headers,
+      }
+    ).then(processResponse);
+  }
+
+
 }
 
 const processResponse = (res) => {

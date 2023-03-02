@@ -40,14 +40,14 @@
   <div class="popup popup_profile">
     <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <form class="popup__form popup__profile-form" name="formPopup"  novalidate>
-        <input type="text" id="name" class="popup__input popup__input_type_name" name="name"
-          placeholder="Имя" minlength="2" maxlength="40" required>
+      <form class="popup__form popup__profile-form" name="formPopup" novalidate>
+        <input type="text" id="name-input" class="popup__input popup__input_type_name" name="name" placeholder="Имя"
+          minlength="2" maxlength="40" required>
         <span class="popup__input-error name-input-error"></span>
-        <input type="text" id="description" class="popup__input popup__input_type_description"
-          name="about" placeholder="Вид деятельности" minlength="2" maxlength="200" required>
+        <input type="text" id="description-input" class="popup__input popup__input_type_description" name="about"
+          placeholder="Вид деятельности" minlength="2" maxlength="200" required>
         <span class="popup__input-error description-input-error"></span>
-        <button type="submit" class="popup__submit">Сохранить</button>
+        <button type="submit" class="popup__submit popup__submit_type_profile">Сохранить</button>
       </form>
       <button class="popup__close popup__close-profile" type="button"></button>
     </div>
@@ -74,7 +74,8 @@
     <div class="popup__container">
       <h2 class="popup__title">Обновить аватар</h2>
       <form name="formPopup-avatar" class="popup__form popup__avatar-form" novalidate>
-        <input type="url" id="image" class="popup__input popup__input_type_avatar" name="avatar" placeholder="Ссылка на аватар" required>
+        <input type="url" id="image" class="popup__input popup__input_type_avatar" name="avatar"
+          placeholder="Ссылка на аватар" required>
         <button type="submit" class="popup__submit">Сохранить</button>
       </form>
       <button class="popup__close popup__close-avatar" type="button"></button>
@@ -108,9 +109,9 @@
       <div class="card__info">
         <h2 class="card__title"></h2>
         <div class="card__like-container">
-        <button class="card__like" type="button"></button>
-        <p class="card__like-number">0</p>
-      </div>
+          <button class="card__like" type="button"></button>
+          <p class="card__like-number"></p>
+        </div>
         <button class="card__delete" type="button"></button>
       </div>
     </div>

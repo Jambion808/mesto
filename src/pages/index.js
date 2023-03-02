@@ -6,6 +6,7 @@ import {
   profileDescription,
   profileEditButton,
   popupInputName,
+  popupImage,
   popupInputDescriprion,
   cardAddButton,
   cardContainer,
@@ -38,18 +39,18 @@ const config = {
 };
 
 const api = new Api(config);
-// 1 ок
-// 2 ок
-// 3 ок
-// 4
-// 5
-// 6
-// 7
-// 8
-// 9
-// 10
-
-//1,2) Get запросы на пользователя и карточки
+// 1 ОК
+// 2 ОК
+// 3 ОК
+// 4 ОК
+// 5 ОК
+// 6 Попап удаления карточки
+// 7 Удаление карточки
+// 8  Постановка и снятие лайка
+// 9 Обновление аватара пользователя
+// 10 ОК
+ 
+//1,2) Get запросы на пользователя и карточки !оставляем!
 Promise.all([api.getInfoAboutUser(), api.getCardsUser()])
   .then((responses) => {
   const userData = responses[0];
@@ -58,24 +59,24 @@ Promise.all([api.getInfoAboutUser(), api.getCardsUser()])
   renderCard.renderItems(cardList);
 });
 
-// //1)Загружаем информацию о пользователе ОК
-// api
-//   .getInfoAboutUser()
-//   .then((res) => {
-//     profileName.textContent = res.name;
-//     profileDescription.textContent = res.about;
-//     profileAvatar.style = `background-image: url($(res.avatar));`;
-//   })
-//   .catch((err) => {
-//     console.log(`Ошибка ${err}`);
-//   });
+// //1)Загружаем информацию о пользователе ОК !оставляем!
+api
+  .getInfoAboutUser()
+  .then((res) => {
+    profileName.textContent = res.name;
+    profileDescription.textContent = res.about;
+    profileAvatar.style = `background-image: url($(res.avatar));`;
+  })
+  .catch((err) => {
+    console.log(`Ошибка ${err}`);
+  });
 
-// // //2)Загружаем массив карточек с сервера ОК
-// api.getCardsUser().then((res) => {
-//   renderCard.renderItems(res);
-// });
+// // //2)Загружаем массив карточек с сервера ОК !оставляем!
+api.getCardsUser().then((res) => {
+  renderCard.renderItems(res);
+});
 
-//3)редактирование профиля ОК (поправить валидацию!!!)
+//3)редактирование профиля ОК !оставляем!
 
 function formProfileEditSubmit(values) {
   userInfo.setUserInfo(values);
@@ -95,11 +96,13 @@ function formProfileEditSubmit(values) {
     });
 }
 
-//3.1)Показать попап профилья
+//3.1)Показать попап профилья ОК !оставляем!
 function showPopupProfile() {
   popupProfile.open();
   popupInputName.value = userInfo.getUserInfo().name;
   popupInputDescriprion.value = userInfo.getUserInfo().about;
+  profileValidation.activateValidation();
+  profileValidation.resetValidation();
 }
 
 profileEditButton.addEventListener("click", showPopupProfile);
@@ -108,7 +111,7 @@ const popupProfile = new PopupWithForm(popupProfileEdit, formProfileEditSubmit);
 popupProfile.setEventListeners();
 
 
-// //4)Создание карточек
+// //4)Создание карточек ОК !оставляем!
 
 const renderCard = new Section(
   {
@@ -126,8 +129,8 @@ const renderCard = new Section(
 );
 // renderCard.renderItems()
 
-function getCard(element) {
-  const card = new Card(element, "#template-cards", openPopupImage);
+function getCard(element) { //
+  const card = new Card(element, "#template-cards", openPopupImage); //
   const cardElement = card.generateCard();
   return cardElement;
 };
@@ -140,7 +143,7 @@ function getCard(element) {
 
 
 
-//Попап карточки
+//Попап карточки ОК !оставляем!
 const addCardPopup = new PopupWithForm(popupCard, addCardUser);
 addCardPopup.setEventListeners();
 
@@ -151,7 +154,7 @@ function openCardPopup() {
 
 cardAddButton.addEventListener("click", () => openCardPopup());
 
-// 4.1 отправляем карточку на сервер
+// 4.1 отправляем карточку на сервер ОК !оставляем!
 function addCardUser(values) {
   popupCard.querySelector(".popup__submit").textContent =
     "Сохранение...";
@@ -171,15 +174,16 @@ function addCardUser(values) {
     addCardPopup.close()
 }
 
-// //Попап изображения
-const popupWithImage = new PopupWithImage(".popup_image");
+// //4.2)Попап изображения ОК !оставляем!
+const popupWithImage = new PopupWithImage(popupImage); 
 popupWithImage.setEventListeners();
 
-function openPopupImage(name, link) {
-  popupWithImage.open({ name, link });
+function openPopupImage(name, link) { 
+  popupWithImage.open({name, link});
 }
 
-//Валидация
+
+//Валидация ОК !оставляем!
 const profileValidation = new FormValidator(enableValidation, profileForm);
 
 const cardForm = document.querySelector(".popup__card-form");
