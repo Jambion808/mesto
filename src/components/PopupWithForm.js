@@ -28,9 +28,6 @@ export default class PopupWithForm extends Popup{
         })
     }
 
-    // changeTextButton(text){
-    //     this._button.textContent = text;
-    // }
 
 
     setEventListeners(){

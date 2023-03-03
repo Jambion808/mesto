@@ -39,9 +39,7 @@ export class Api {
   }
 
   setLikes(id) {
-    return fetch(
-      "https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes",
-      {
+    return fetch(`https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes`,{
         method: "PUT",
         headers: this._headers,
       }
@@ -50,12 +48,32 @@ export class Api {
 
   deleteLike(id){
     return fetch(
-      "https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes",
+      `https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes`,
       {
         method: "DELETE",
         headers: this._headers,
       }
     ).then(processResponse);
+  }
+
+  deleteCard(id){
+    return fetch(
+      `https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}`,
+      {
+        method: "DELETE",
+        headers: this._headers,
+      }
+    ).then(processResponse);
+  }
+
+  setUserAvatarProfile(data) {
+    return fetch("https://mesto.nomoreparties.co/v1/cohort-60/users/me/avatar", {
+      method: "PATCH",
+      headers: this._headers,
+      body: JSON.stringify({
+        avatar: data.avatar
+      }),
+    }).then(processResponse);
   }
 
 

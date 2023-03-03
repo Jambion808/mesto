@@ -1,12 +1,12 @@
 import Popup from "./Popup.js";
 
 export default class DeleteCardPopup extends Popup {
-  constructor(selectorPopup, submitHandler) {
+  constructor(selectorPopup, submitHandlerDeleteCard) {
     super(selectorPopup);
+    this._submitHandlerDeleteCard = submitHandlerDeleteCard.bind(this);
     this._form = this._popup.querySelector(".popup__form");
-    this._submitHandler = submitHandler;
-    this._submitForm = this._submitForm.bind(this);
-    this._submitButton = this._form.querySelector(".popup__submit_delete");
+    this._submitButton = this._form.querySelector(".popup__submit");
+    
   }
 
   open(card, cardId) {
@@ -15,18 +15,14 @@ export default class DeleteCardPopup extends Popup {
     this._cardId = cardId;
   }
 
-  _submitForm(e){
-    e.preventDefault();
-    this._submitHandler(this._card, this._cardId, this._submitButton)
-  }
-
   setEventListeners(){
+    this._popup.addEventListener('submit', (e) => {
+      e.preventDefault();
+      this._submitHandlerDeleteCard(this._card);
+      super.close();
+    })
+
     super.setEventListeners();
-    this._form.addEventListener('submit', this._submitForm)
   }
 
-  removeEventListener(){
-    super.removeEventListener();
-    this._form.removeEventListener('submit', this._submitForm)
-  }
 }
