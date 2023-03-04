@@ -30,6 +30,11 @@ import { Api } from "../components/Api.js";
 import DeleteCardPopup from "../components/DeleteCardPopup.js";
 import "../pages/index.css";
 
+const userInfo = new UserInfo({
+  nameProfile: ".profile__name",
+  infoProfile: ".profile__description",
+  avatarProfile: ".profile__avatar"
+});
 
 let userId;
 
@@ -58,11 +63,7 @@ Promise.all([api.getInfoAboutUser(), api.getCardsUser()])
   console.log(`Ошибка ${err}`);
 });
 
-const userInfo = new UserInfo({
-  nameProfile: ".profile__name",
-  infoProfile: ".profile__description",
-  avatarProfile: ".profile__avatar"
-});
+
  
 
 //Работаем с профилем//
