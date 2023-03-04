@@ -1,34 +1,34 @@
 export class Api {
-  constructor(config) {
-    this._url = config.url;
-    this._headers = config.headers;
+  constructor({baseUrl, headers}) {
+    this._baseUrl = baseUrl;
+    this._headers = headers;
   }
 
   getInfoAboutUser() {
-    return fetch("https://nomoreparties.co/v1/cohort-60/users/me", {
+    return fetch(`${this._baseUrl}/users/me`, {
       headers: this._headers,
     }).then(processResponse);
   }
 
   getCardsUser() {
-    return fetch("https://mesto.nomoreparties.co/v1/cohort-60/cards", {
+    return fetch(`${this._baseUrl}/cards`, {
       headers: this._headers,
     }).then(processResponse);
   }
 
-  setInfoAboutUser(name, about) {
-    return fetch("https://mesto.nomoreparties.co/v1/cohort-60/users/me", {
+  setInfoAboutUser(data) {
+    return fetch(`${this._baseUrl}/users/me`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({
-        name: name,
-        about: about,
+        name: data.name,
+        about: data.about,
       }),
     }).then(processResponse);
   }
 
   setAddUserCard(name, link) {
-    return fetch("https://mesto.nomoreparties.co/v1/cohort-60/cards", {
+    return fetch(`${this._baseUrl}/cards`, {
       method: "POST",
       headers: this._headers,
       body: JSON.stringify({
@@ -39,7 +39,7 @@ export class Api {
   }
 
   setLikes(id) {
-    return fetch(`https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes`,{
+    return fetch(`${this._baseUrl}/cards/${id}/likes`,{
         method: "PUT",
         headers: this._headers,
       }
@@ -48,7 +48,7 @@ export class Api {
 
   deleteLike(id){
     return fetch(
-      `https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}/likes`,
+      `${this._baseUrl}/cards/${id}/likes`,
       {
         method: "DELETE",
         headers: this._headers,
@@ -58,7 +58,7 @@ export class Api {
 
   deleteCard(id){
     return fetch(
-      `https://mesto.nomoreparties.co/v1/cohort-60/cards/${id}`,
+      `${this._baseUrl}/cards/${id}`,
       {
         method: "DELETE",
         headers: this._headers,
@@ -67,7 +67,7 @@ export class Api {
   }
 
   setUserAvatarProfile(data) {
-    return fetch("https://mesto.nomoreparties.co/v1/cohort-60/users/me/avatar", {
+    return fetch(`${this._baseUrl}/users/me/avatar`, {
       method: "PATCH",
       headers: this._headers,
       body: JSON.stringify({

@@ -46,6 +46,7 @@ const addAvatarButton = document.querySelector('.profile__avatar-button');
 const popupAvatar = document.querySelector('.popup_avatar')
 const cardForm = document.querySelector(".popup__card-form");
 const avatarForm = document.querySelector(".popup__avatar-form");
+// const popupSubmit = document.querySelector(".popup__submit");
 
  
 const enableValidation = {

@@ -5,7 +5,7 @@ export default class DeleteCardPopup extends Popup {
     super(selectorPopup);
     this._submitHandlerDeleteCard = submitHandlerDeleteCard.bind(this);
     this._form = this._popup.querySelector(".popup__form");
-    this._submitButton = this._form.querySelector(".popup__submit");
+    // this._submitButton = this._form.querySelector(".popup__submit");
     
   }
 
@@ -19,7 +19,7 @@ export default class DeleteCardPopup extends Popup {
     this._popup.addEventListener('submit', (e) => {
       e.preventDefault();
       this._submitHandlerDeleteCard(this._card);
-      super.close();
+      // super.close();
     })
 
     super.setEventListeners();

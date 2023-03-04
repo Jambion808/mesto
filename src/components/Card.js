@@ -27,7 +27,7 @@ export default class Card {
   }
 
    //ставим и убираем лайк
-   _switchLike() {
+   switchLike() {
     this._likeButton.classList.toggle("card__like_active");
   }
 
@@ -60,7 +60,7 @@ export default class Card {
 
     this._likeButton.addEventListener("click", () => {
       this._handleCardLike(this, this._isLiked(), this._cardId);
-      this._switchLike();
+      // this._switchLike();
    
     });
 
