@@ -93,7 +93,6 @@ function showPopupProfile() {
   popupInputDescriprion.value = infoObject.about
   // popupInputName.value = userInfo.getUserInfo().name;
   // popupInputDescriprion.value = userInfo.getUserInfo().about;
-  profileValidation.activateValidation();
   profileValidation.resetValidation();
 }
 
@@ -194,7 +193,6 @@ function handleCardLike(card, isLiked, cardId){
       card.showLikeCount(res.likes.length)
       card.solidLikeStatus(res.likes)
       card.switchLike();
-      addCardPopup.close();
     })
     .catch((err) => {
       console.log(`Ошибка ${err}`);
