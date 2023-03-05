@@ -1,9 +1,6 @@
 import Card from "../components/Card.js";
 import {
   initialCards,
-  popupEditProfile,
-  profileName,
-  profileDescription,
   profileEditButton,
   popupInputName,
   popupImage,
@@ -11,7 +8,6 @@ import {
   cardAddButton,
   cardContainer,
   addAvatarButton,
-  profileAvatar,
   popupAvatar,
   cardForm, 
   avatarForm,
@@ -91,14 +87,12 @@ function showPopupProfile() {
   const infoObject = userInfo.getUserInfo();
   popupInputName.value = infoObject.name;
   popupInputDescriprion.value = infoObject.about
-  // popupInputName.value = userInfo.getUserInfo().name;
-  // popupInputDescriprion.value = userInfo.getUserInfo().about;
+
   profileValidation.resetValidation();
 }
 
 profileEditButton.addEventListener("click", showPopupProfile);
 
-// const popupProfile = new PopupWithForm(popupProfileEdit, formProfileEditSubmit);
 formProfileEditSubmit.setEventListeners();
 
 
@@ -119,10 +113,10 @@ const addCardUser = new PopupWithForm(popupCard, (values) => {
     .finally(() => {
       addCardUser.renderLoading(false);
     });
-    // addCardPopup.close()
+    
 })
 
-// const addCardPopup = new PopupWithForm(popupCard, addCardUser);
+
 
 //Создание карточек
 const renderCard = new Section(
@@ -130,12 +124,6 @@ const renderCard = new Section(
     items: initialCards,
     renderer: (element) => {
       renderCard.addItem(getCard(element))
-      // const card = {
-      //   name: element.name,
-      //   link: element.link,
-      // };
-      // const newCard = getCard(card);
-      // renderCard.addItem(newCard);
     },
   },cardContainer
 );
@@ -157,13 +145,6 @@ function openCardPopup() {
 }
 
 cardAddButton.addEventListener("click", () => openCardPopup());
-
-
-// function createCard(element) {
-//   const newCard = getCard(element);
-//   renderCard.addItem(newCard);
-// }
-
 
 //Удаляем карточки с сервера//
 //удаление карточки
@@ -253,50 +234,3 @@ profileValidation.activateValidation();
 cardValidation.activateValidation();
 avatarValidation.activateValidation()
 
-//Профиль 2
-
-//Профиль 1
-// profileEditButton.addEventListener('click', ()=>{
-//   popupProfile.open();
-//   const {nameProfile, infoProfile} = userInfo.getUserInfo();
-//   popupInputName.value = nameProfile;
-//   popupInputDescriprion.value = infoProfile;
-//   profileValidation.resetValidation();
-// }
-// )
-
-// function modifyProfile(obj){
-//   userInfo.setUserInfo(obj.nameInput, obj.descriptionInput);
-
-//   popupProfile.close();
-// }
-
-// const popupProfile = new PopupWithForm(".popup_profile", modifyProfile)
-// popupProfile.setEventListeners();
-
-
-// const config = {
-//   baseUrl: "https://mesto.nomoreparties.co/v1/cohort-60", 
-//   headers: {
-//     authorization: "cc77f94d-b1ef-42c0-9cc3-7185b7071d0e",
-//     "Content-Type": "application/json",
-//   },
-// };
-
-
-// //1)Загружаем информацию о пользователе 
-// api
-//   .getInfoAboutUser()
-//   .then((res) => {
-//     profileName.textContent = res.name;
-//     profileDescription.textContent = res.about;
-
-//   })
-//   .catch((err) => {
-//     console.log(`Ошибка ${err}`);
-//   });
-
-// //2)Загружаем массив карточек с сервера 
-// api.getCardsUser().then((res) => {
-//   renderCard.renderItems(res);
-// });
